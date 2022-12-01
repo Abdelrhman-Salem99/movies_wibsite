@@ -82,6 +82,7 @@ function Navbar(props) {
                   flexGrow: 1,
                   display: { xs: "none", sm: "block" },
                   cursor: "pointer",
+                  width: "100%",
                 }}
               >
                 Noxe
