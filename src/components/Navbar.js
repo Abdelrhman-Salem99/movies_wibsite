@@ -19,6 +19,7 @@ const navItems = ["Home", "Movies", "TvShows", "People", "About", "Networks"];
 
 function Navbar(props) {
   const { window } = props;
+
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -48,7 +49,7 @@ function Navbar(props) {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <AppBar component="nav">
+      <AppBar component="nav" position="static">
         <Toolbar>
           <IconButton
             color="inherit"
@@ -83,6 +84,9 @@ function Navbar(props) {
                   display: { xs: "none", sm: "block" },
                   cursor: "pointer",
                   width: "100%",
+                  fontSize: "3rem",
+                  // fontFamily: "Montserrat Alternates",
+                  fontWeight: "bold",
                 }}
               >
                 Noxe
@@ -94,6 +98,9 @@ function Navbar(props) {
                     sx={{
                       color: (theme) => theme.palette.primary.dark,
                       "&:hover": { color: "#f0f0f1" },
+
+                      fontSize: "1.7rem",
+                      fontFamily: "Montserrat Alternates",
                     }}
                   >
                     {item}
@@ -102,12 +109,22 @@ function Navbar(props) {
               </Box>
             </Box>
 
-            <Box sx={{ cursor: "pointer" }}>
-              <Typography>Logout</Typography>
+            <Box
+              sx={{
+                cursor: "pointer",
+              }}
+            >
+              <Typography
+                variant="p"
+                sx={{ fontSize: "1.7rem", fontFamily: "Montserrat Alternates" }}
+              >
+                Logout
+              </Typography>
             </Box>
           </Box>
         </Toolbar>
       </AppBar>
+
       <Box component="nav">
         <Drawer
           container={container}
